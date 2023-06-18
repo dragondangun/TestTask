@@ -44,7 +44,7 @@ namespace UnitTests {
             sides[2] = c;
         }
 
-        public IEnumerable<double> GetTriangleSider() => sides;
+        public IEnumerable<double> GetSides() => sides;
     }
 
     class Rectangle:ISidesProvider {
@@ -84,6 +84,6 @@ namespace UnitTests {
             sides[3] = c;
         }
 
-        public IEnumerable<double> GetTriangleSider() => sides;
+        public IEnumerable<double> GetSides() => sides;
     }
 }
