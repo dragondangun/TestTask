@@ -20,6 +20,41 @@ namespace UnitTests {
         public double GetRadius() => Radius;
     }
 
+    class Triangle:ISidesProvider {
+        double[] sides;
+        public double[] Sides {
+            get => sides;
+            set => value.CopyTo(sides, 0);
+        }
+
+        public Triangle(double[] sides) {
+            if(sides.Length != 3) {
+                throw new ArgumentException();
+            }
+
+            this.sides = new double[3];
+            sides.CopyTo(this.sides, 0);
+        }
+
+        public Triangle(double a, double b, double c) {
+            if(a <= 0) {
+                throw new ArgumentException();
+            }
+            if(b <= 0) {
+                throw new ArgumentException();
+            }
+            if(c <= 0) {
+                throw new ArgumentException();
+            }
+
+            sides = new double[3];
+            sides[0] = a;
+            sides[1] = b;
+            sides[2] = c;
+        }
+
+        public IEnumerable<double> GetSides() => sides;
+    }
 
     class BadTriangle:ISidesProvider {
         double[] sides;
