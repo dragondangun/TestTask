@@ -12,8 +12,18 @@
             return radius*radius*Math.PI;
         }
 
-        public static double OfTriangle(ISidesProvider sides) {
-            throw new NotImplementedException();
+        public static double OfTriangle(ISidesProvider _sides) {
+            if(_sides is null)
+                throw new ArgumentNullException();
+
+            if(!DoesTriangle.Exists(_sides))
+                throw new ArgumentException();
+
+            var semiperim = GetPerimeter.GetPerimeterOf(_sides) / 2;
+
+            var sides = _sides.GetSides().ToArray();
+
+            return Math.Sqrt(semiperim * (semiperim - sides[0]) * (semiperim - sides[1]) * (semiperim - sides[2]));
         }
     }
 }
