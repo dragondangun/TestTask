@@ -55,14 +55,14 @@ namespace TestsTest {
 
 
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void GetCircleArea_null() {
             // Arrange
             Circle circle = null;
             // Act
             // Assert
 
-            Assert.ThrowsException<NullReferenceException>(() => GetArea.OfCircle(circle));
+            Assert.ThrowsException<ArgumentNullException>(() => GetArea.OfCircle(circle));
         }
     }
 
