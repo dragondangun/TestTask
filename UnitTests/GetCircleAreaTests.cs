@@ -65,18 +65,4 @@ namespace TestsTest {
             GetArea.OfCircle(circle);
         }
     }
-
-    class Circle : IRadiusProvider {
-        double radius;
-        double Radius {
-            get => radius;
-            set => radius = value;
-        }
-        
-        public Circle(double r) {
-            radius = r;
-        }
-
-        public double GetRadius() => Radius;
-    }
 }
