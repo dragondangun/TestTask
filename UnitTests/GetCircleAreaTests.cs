@@ -32,7 +32,7 @@ namespace TestsTest {
         [TestMethod]
         public void GetCircleArea_0() {
             // Arrange
-            Circle circle = new(9);
+            Circle circle = new(0);
             double expected = 0;
             double error = 0.000001;
             // Act
@@ -46,7 +46,7 @@ namespace TestsTest {
         [ExpectedException(typeof(ArgumentException))]
         public void GetCircleArea_n3() {
             // Arrange
-            Circle circle = new(9);
+            Circle circle = new(-3);
             // Act
             double given = GetArea.OfCircle(circle);
             // Assert
