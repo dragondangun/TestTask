@@ -28,6 +28,7 @@ namespace UnitTests {
         }
 
         public Triangle(double[] sides) {
+            //Does triangle exists check can be checked here, but there's no big purpose of it
             if(sides.Length != 3) {
                 throw new ArgumentException();
             }
