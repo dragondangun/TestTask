@@ -1,4 +1,5 @@
 ﻿namespace Test {
+    // Надеюсь, я правильно понял, что здесь нужно делать DI.
     public static class GetArea {
         public static double OfCircle(IRadiusProvider circle) {
             if(circle is null)
