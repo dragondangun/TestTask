@@ -12,7 +12,7 @@
             return radius*radius*Math.PI;
         }
 
-        public static double OfTriangle(ITriangleSidesProvider sides) {
+        public static double OfTriangle(ISidesProvider sides) {
             throw new NotImplementedException();
         }
     }
