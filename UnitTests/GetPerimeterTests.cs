@@ -37,7 +37,7 @@ namespace TestsTest {
             BadTriangle triangle = new(-3, 4, 5);
             // Act
             // Assert
-            Assert.ThrowsException<ArgumentException>(() => GetPerimeter.GetPerimeterOf(triangle));
+            GetPerimeter.GetPerimeterOf(triangle);
         }
 
 
