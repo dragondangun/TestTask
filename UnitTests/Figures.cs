@@ -116,7 +116,7 @@ namespace UnitTests {
             sides[0] = a;
             sides[1] = b;
             sides[2] = c;
-            sides[3] = c;
+            sides[3] = d;
         }
 
         public IEnumerable<double> GetSides() => sides;
