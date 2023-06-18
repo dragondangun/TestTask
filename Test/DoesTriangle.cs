@@ -28,7 +28,20 @@ namespace Test {
         }
 
         public static bool Rectangular(ISidesProvider _sides) {
-            throw new NotImplementedException();
+            if(_sides is null)
+                throw new ArgumentNullException();
+
+            if(!Exists(_sides))
+                throw new ArgumentException();
+
+            var sides = _sides.GetSides().ToArray();
+            var aSquare = Math.Pow(sides[0],2);
+            var bSquare = Math.Pow(sides[1],2);
+            var cSquare = Math.Pow(sides[2],2);
+            return aSquare == (bSquare+cSquare) ||
+                                bSquare == (aSquare+cSquare) ||
+                                cSquare == (bSquare + aSquare);
+
         }
     }
 }

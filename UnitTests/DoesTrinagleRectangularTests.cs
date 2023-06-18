@@ -18,7 +18,7 @@ namespace TestsTest {
         [TestMethod]
         public void DoesTrinagleRectangular_rectangle() {
             // Arrange
-            Rectangle rectangle = new(4.5, 4, 6, 2);
+            Triangle rectangle = new(4.5, 6, 2);
             bool expected = false;
             // Act
             bool given = DoesTriangle.Rectangular(rectangle);
@@ -27,6 +27,7 @@ namespace TestsTest {
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
         public void DoesTrinagleRectangular_1_10_40() {
             // Arrange
             Triangle triangle = new(1, 10, 50);
