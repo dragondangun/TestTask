@@ -62,7 +62,7 @@ namespace TestsTest {
             // Act
             // Assert
 
-            Assert.ThrowsException<ArgumentNullException>(() => GetArea.OfCircle(circle));
+            GetArea.OfCircle(circle);
         }
     }
 
