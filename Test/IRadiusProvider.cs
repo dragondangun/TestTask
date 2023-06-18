@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Test {
-    public interface IRadiusProvider<T> where T:struct {
-        public T GetRadius();
+    public interface IRadiusProvider {
+        public double GetRadius();
     }
 }

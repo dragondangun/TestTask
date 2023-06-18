@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Test {
-    public interface ITriangleSidesProvider<T> where T:struct {
-        public IEnumerable<T> GetTriangleSider();
+    public interface ITriangleSidesProvider {
+        public IEnumerable<double> GetTriangleSider();
     }
 }
