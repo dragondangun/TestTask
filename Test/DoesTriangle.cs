@@ -41,7 +41,6 @@ namespace Test {
                             BC > A;
             }
         }
-        }
 
         public static bool Rectangular(ISidesProvider _sides) {
             if(_sides is null)
