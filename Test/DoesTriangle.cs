@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Test {
     public static class DoesTriangle {
-        public static bool Exists(ISidesProvider _sides) {
+        public static bool Exists(ISidesProvider _sides, bool degeneracyCase = false) {
             if(_sides is null)
                 throw new ArgumentNullException();
 
@@ -22,9 +22,25 @@ namespace Test {
                 }
             }
 
-            return (sides[0] + sides[1]) >= sides[2] &&
-                            (sides[0] + sides[2]) >= sides[1] &&
-                            (sides[1] + sides[2]) >= sides[0];
+            var A = sides[0];
+            var B = sides[1];
+            var C = sides[2];
+
+            var AB = A + B;
+            var BC = B + C;
+            var AC = A + C;
+
+            if(degeneracyCase) {
+                return AB >= C &&
+                            AC >= B &&
+                            BC >= A;
+            }
+            else {
+                return AB > C &&
+                            AC > B &&
+                            BC > A;
+            }
+        }
         }
 
         public static bool Rectangular(ISidesProvider _sides) {
